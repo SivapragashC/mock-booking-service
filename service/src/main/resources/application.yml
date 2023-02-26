@@ -1,25 +1,9 @@
 #Configuration file where we used to keep DB and external service call and Jwt related info
 kafkabootstrapservers: localhost:29092
-# Local mongoDB connection details
-mongodbname: 'telikos-db'
-mongodbusername: 'admin'
-mongodbpassword: 'password'
-mongodbport: '27017'
-mongodbhost: 'localhost'
-mongodbauthenticationdb: 'admin'
 TOKEN_ISS: https://iam-cdt.maersk.com/acm/oauth2/mau
 TOKEN_KEYSTORE: https://api-cdt.maersk.com/oauth2/jwks?provider=ciam
 server:
   port: 8076
-
-
-COSMOS_MONGO_DB_NAME: activityplandb
-COSMOS_MONGO_USERNAME: cosmon-telikos-activityplan-dev001
-COSMOS_MONGO_PASSWORD: Kazsy3jC9pWo10EohHmhSt5NUWRHwhHSkzIlYvFdTpsWmUzYTLeZKgqQhNQWDTGG51iX5Wm5qyysACDb0SLK4A==
-COSMOS_MONGO_PORT: 10255
-COSMOS_MONGO_HOST: cosmon-telikos-activityplan-dev001.mongo.cosmos.azure.com
-COSMOS_MONGO_READ_TIMEOUT: 30000
-COSMOS_MONGO_CONN_TIMEOUT: 30000
 
 spring:
   #  profiles:     #too pas by pass jwt plz use this profile only for local testing and for integration testing
@@ -71,16 +55,6 @@ spring:
         url: "http://localhost:8081"
         username:
         password:
-  data:
-    mongodb:
-#      database: ${COSMOS_MONGO_DB_NAME}
-#      uri: mongodb://${COSMOS_MONGO_USERNAME}:${COSMOS_MONGO_PASSWORD}@${COSMOS_MONGO_HOST}:${COSMOS_MONGO_PORT}/?ssl=true&retrywrites=false
-      database: ${mongodbname}
-#      username: ${COSMOS_MONGO_USERNAME}
-#      password: ${COSMOS_MONGO_PASSWORD}
-      port: ${mongodbport}
-      host: ${mongodbhost}
-#      authentication-database: ${mongodbauthenticationdb}
 management:
   endpoints:
     web:
@@ -102,41 +76,3 @@ info:
   git:
     mode: full
 
-
-#activityplan:
-#  taskQueue: SivastaskQueue
-#  rules:
-#    InterModal:
-#      Booking:
-#        Booking Confirmed:
-#          - taskName: initializeActivityPlan
-#            waitForResponse: false
-#            waitFor:
-#          - taskName: bookingConfirmed
-#            waitForResponse: false
-#            waitFor:
-#          - taskName: emailSend
-#            waitForResponse: true
-#            waitFor: emailResponseReceived
-#
-#
-#        Booking Updated:
-#
-#          - taskName: bookingUpdated
-#            waitForResponse: false
-#            waitFor:
-#
-#        Booking Rejected:
-#
-#          - taskName: initializeActivityPlan
-#            waitForResponse: false
-#            waitFor:
-#          - taskName: bookingSubmitted
-#            waitForResponse: false
-#            waitFor:
-#          - taskName: bookingRejected
-#            waitForResponse: false
-#            waitFor:
-#          - taskName: emailSend
-#            waitForResponse: true
-#            waitFor: emailResponseReceived

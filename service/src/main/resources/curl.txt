@@ -1,0 +1,13 @@
+curl --location --request POST 'http://localhost:8076/publish' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "productName": "InterModal",
+    "domainName": "Booking",
+    "orderId" : "OID02",
+    "bookingId": "BID02",
+    "eventName": "BookingConfirmed",
+    "userId": "6",
+    "userName": "User6",
+    "activityDateTime":"10-02-2023-00:00:10",
+    "status":""
+}'

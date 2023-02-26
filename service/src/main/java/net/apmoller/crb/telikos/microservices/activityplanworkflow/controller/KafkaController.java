@@ -21,9 +21,5 @@ public class KafkaController {
         KafkaProducerService.kafkaSendMessage("booking-topic",message);
     }
 
-    @PostMapping("/publish/email")
-    public void pushReactiveEmail(@RequestBody final ActivityPlanModel message) {
-        KafkaProducerService.kafkaSendMessage("email-response-topic",message);
-    }
 
 }

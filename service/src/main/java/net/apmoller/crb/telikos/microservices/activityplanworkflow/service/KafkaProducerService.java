@@ -19,7 +19,7 @@ public class KafkaProducerService {
 
         if (null != emailRequest) {
 
-            ProducerRecord<String, Object> producerRecord = new ProducerRecord<>(topicName, emailRequest.getOrderId(), emailRequest);
+            ProducerRecord<String, Object> producerRecord = new ProducerRecord<>(topicName, emailRequest.getBookingId(), emailRequest);
             kafkaProducer.send(producerRecord, (recordMetadata, exception) -> {
                 if (exception == null) {
                     log.info("message published successfully " +
