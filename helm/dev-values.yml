@@ -1,0 +1,16 @@
+global:
+  projectName: ohp-telikos
+  env: dev
+
+## HPA is disabled in Dev Environment. It will use Static replica Count.
+replicaCount: 1
+
+## is this Consumer Service??
+isConsumerService: false
+
+#+++++++++++++++++++++++++++++++++Developer Use++++++++++++++++++++++++++++++++++#
+configMap:
+  data:
+    #TokenConfig
+    FORGEROCK_ISS: vault:ohptelikos-kv/data/readable/dev/forgerock#iss
+    FORGEROCK_KEYSTORE: vault:ohptelikos-kv/data/readable/dev/forgerock#keyStore

@@ -1,0 +1,33 @@
+{
+    "type": "record",
+    "name": "ActivityPlanModel",
+    "namespace": "net.apmoller.crb.telikos.microservices.activityplanworkflow.model",
+    "fields": [{
+        "name": "activityDateTime",
+        "type":   "string"  
+    }, {
+        "name": "bookingId",
+        "type":   "string"  
+    }, {
+        "name": "domainName",
+        "type":   "string"  
+    }, {
+        "name": "status",
+        "type":   "string"  
+    }, {
+        "name": "eventName",
+        "type":   "string"  
+    },  {
+        "name": "orderId",
+        "type":   "string"  
+    }, {
+        "name": "productName",
+        "type":   "string"  
+    }, {
+        "name": "userId",
+        "type":   "string"  
+    }, {
+        "name": "userName",
+        "type":   "string"  
+    }]
+}

@@ -1,0 +1,15 @@
+activityplan:
+  rules:
+    bookingConfirmed:
+      tasks:
+        - initializeActivityPlan
+        - bookingSubmitted
+        - bookingConfirmed
+        - emailEvent
+    bookingUpdated:
+      tasks:
+        - bookingUpdated
+    bookingRejected:
+      tasks:
+        - bookingRejected
+        - emailEvent
