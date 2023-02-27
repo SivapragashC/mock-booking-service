@@ -1,7 +1,6 @@
 #Configuration file where we used to keep DB and external service call and Jwt related info
 kafkabootstrapservers: localhost:29092
-TOKEN_ISS: https://iam-cdt.maersk.com/acm/oauth2/mau
-TOKEN_KEYSTORE: https://api-cdt.maersk.com/oauth2/jwks?provider=ciam
+
 server:
   port: 8076
 
