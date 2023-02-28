@@ -15,20 +15,6 @@ spring:
   jackson:
     # Controls the inclusion of properties during serialization.
     default-property-inclusion: non_null
-  application:
-    # Application name
-    name: Activityplanworkflow
-    reactive-jwt-validators:
-      enabled: true
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${TOKEN_ISS}
-          audience: bca001
-          jwk-set-uri: ${TOKEN_KEYSTORE}
-          jws-algorithm: RS256
-          secret-key: vtshV6vQk2cWgFyC
   cloud:
     compatibility-verifier:
       enabled: false
